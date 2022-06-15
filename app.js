@@ -1,5 +1,13 @@
 var createError = require("http-errors");
 var express = require("express");
+
+const mongoose = require("mongoose");
+const mongoDB = require("./dbCredentials");
+
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "mongoDB connection error"));
+
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
