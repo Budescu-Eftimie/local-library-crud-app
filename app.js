@@ -1,5 +1,5 @@
-var createError = require("http-errors");
-var express = require("express");
+const createError = require("http-errors");
+const express = require("express");
 
 const mongoose = require("mongoose");
 const mongoDB = require("./dbCredentials");
@@ -8,15 +8,15 @@ mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "mongoDB connection error"));
 
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var coolRouter = require("./routes/cool");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const coolRouter = require("./routes/cool");
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

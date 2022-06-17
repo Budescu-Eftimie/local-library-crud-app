@@ -23,7 +23,7 @@ AuthorSchema.virtual("name").get(function () {
 
 // Virtual for author's lifespan
 AuthorSchema.virtual("lifespan").get(function () {
-    var lifetime_string = "";
+    const lifetime_string = "";
     if (this.date_of_birth) {
         lifetime_string = this.date_of_birth.getYear().toString();
     }
