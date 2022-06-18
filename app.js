@@ -2,7 +2,7 @@ const createError = require("http-errors");
 const express = require("express");
 
 const mongoose = require("mongoose");
-const mongoDB = require("./dbCredentials");
+const mongoDB = process.env.MONGODB_URI || require("./dbCredentials");
 
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
